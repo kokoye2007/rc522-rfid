@@ -1,6 +1,14 @@
 #rc522-rfid
 node.js module to access a rfid reader with rc522 chipset which is connected a raspberry pi
 
+## Warning
+The library work with RPI v1 only. It is based on bcm2835 module. The RIPv2 has different addresses.
+```
+On RPI 2, the peripheral addresses are different and the bcm2835 library gets them from reading /proc/device-tree/soc/ranges. This is only availble with recent versions of the kernel on RPI 2.
+```
+Source: http://www.airspayce.com/mikem/bcm2835/
+Issue: https://github.com/sbrinkmann/rc522-rfid/issues/2
+
 ## Purpose
 This node module is to access RFID reader with a rc522 chipset (e.g. http://amzn.com/B00GYR1KJ8) via GPIO interface of the raspberry pi.
 
